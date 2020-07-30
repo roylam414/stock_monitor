@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import pandas as pd
-import re
 from datetime import date
 import os.path
 
@@ -84,6 +83,8 @@ df_column = dict([
 ])
 df2 = pd.DataFrame(df_column)
 
-print(df2)
+#Print the new dataframe in the console, it can output to an excel but it is not quite handy
+with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+    print(df2)
 
 
