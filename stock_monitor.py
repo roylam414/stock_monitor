@@ -37,7 +37,7 @@ today = []
 #start the scraping loop
 for i in stock_list:
     #Get request from HKEx.com.hk
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome('.\chromedriver.exe',options=chrome_options)
     r = driver.get("https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sym={}&sc_lang=en"\
                     .format(i))
     content = driver.page_source
